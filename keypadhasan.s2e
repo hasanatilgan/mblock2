@@ -1,0 +1,96 @@
+{
+"extensionName": "keypad",
+"description": "keypad",
+"version": "1.1",
+"author": "Mert \n",
+"homepage": "None",
+"sort":0,
+"javascriptURL":"js/susensoru.js",
+"firmware":"1.0",
+"extensionPort":0,
+"blockSpecs":[
+
+[
+"r",
+"veri",
+"veri",
+{
+"setup":"",
+"inc":"",
+"def":"",
+"work":"(tus)\n",
+"loop":""
+
+}],
+
+[
+"w",
+"keypadpinleri:%n,%n,%n,%n,%n,%n,%n,%n",
+"keypadpinleri",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+{
+  "setup":"pinMode({10},INPUT); \n pinMode({9},INPUT); \n pinMode({8},INPUT); \n pinMode({7},INPUT); \n pinMode({6},INPUT); \n pinMode({5},INPUT); \n pinMode({4},INPUT); \n pinMode({3},INPUT); \n",
+  "inc":"",
+  "def":"int tus; \n boolean tusabasildimi=true; \n int c1={7}; \n int c2={8}; \n int c3={9}; \n int c4={10}; \n int r1={3}; \n int r2={4}; \n int r3={5}; \n int r4={6}; \n int sure=500; \n",
+  "work":"",
+  "loop":""  
+	
+}
+
+
+],
+
+[
+"w",
+"keypadoku",
+"keypadoku",
+{
+  "setup":"",
+  "inc":"",
+  "def":"",
+  "work":"  digitalWrite(r1,HIGH); if(digitalRead(c1)){tus=1; tusabasildimi=true; delay(sure);} if(digitalRead(c2)){tus=2; tusabasildimi=true; delay(sure);} if(digitalRead(c3)){tus=3; tusabasildimi=true; delay(sure);} if(digitalRead(c4)){tus=A; tusabasildimi=true; delay(sure);} digitalWrite(r1,LOW); digitalWrite(r2,HIGH);if(digitalRead(c1)){tus=4; tusabasildimi=true; delay(sure);} if(digitalRead(c2)){tus=5; tusabasildimi=true; delay(sure);} if(digitalRead(c3)){tus=6; tusabasildimi=true; delay(sure);} if(digitalRead(c4)){tus=B; tusabasildimi=true; delay(sure);} digitalWrite(r2,LOW); digitalWrite(r3,HIGH); if(digitalRead(c1)){tus=7; tusabasildimi=true; delay(sure);} if(digitalRead(c2)){tus=8; tusabasildimi=true; delay(sure);} if(digitalRead(c3)){tus=9; tusabasildimi=true; delay(sure);} if(digitalRead(c4)){tus=C; tusabasildimi=true; delay(sure);} digitalWrite(r3,LOW); digitalWrite(r4,HIGH); if(digitalRead(c1)){tus=*; tusabasildimi=true; delay(sure);} if(digitalRead(c2)){tus=0; tusabasildimi=true; delay(sure);} if(digitalRead(c3)){tus=#; tusabasildimi=true; delay(sure);} if(digitalRead(c4)){tus=D; tusabasildimi=true; delay(sure);} digitalWrite(r4,LOW); \n",
+  "loop":""  
+	
+}
+],
+
+[
+"b",
+"tusa basildi",
+"tusa basildi",
+{
+"setup":"",
+"inc":"",
+"def":"",
+"work":"(tusabasildimi)\n",
+"loop":""
+
+}]
+
+
+
+],
+"menus": {
+	
+	
+	
+},
+"values":{
+
+	
+},
+
+"translators":{
+"zh_CN":{}	
+	
+	
+}
+
+}
